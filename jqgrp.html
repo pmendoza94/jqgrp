@@ -3,7 +3,7 @@
 
 <head>
    <title>jquerytest</title>
-   <link rel="stylesheet" type="text/css" href="jqgrp.css">
+   <link rel="stylesheet" type="text/css" href="jqprp.css">
    <meta charset="utf-8">
    <meta name="jquerytest" content="messing with jquery">
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -11,21 +11,26 @@
    		$(document).ready(function(){
    			//jquery goes here - to load after doc ready
    			$('#click > button').click(function(){
-               alert("User used Click!");
+               $("#clickbutton").click();
             });
             $('#hide > button').click(function(){
-               alert("User used Hide!");
-            });$('#show > button').click(function(){
-               alert("User used Show!");
+               $("#hidden").hide();
+            });
+            $('#show > button').click(function(){
+               $("#paragraph").show();
             });
             $('#toggle > button').click(function(){
-               alert("User used Toggle!");
+               $("#togpara").toggle();
             });
             $('#slidedown > button').click(function(){
-               alert("User used SlideDown!");
+              if($("#slidedownpic").is(":hidden")){
+                 $("#slidedownpic").slideDown();
+              }  else {
+                 $("#slidedownpic").hide();
+              }
             });
             $('#slideup > button').click(function(){
-               alert("User used SlideUp!");
+               $("#slideuppic").slideUp();
             });
             $('#slidetoggle > button').click(function(){
                alert("User used SlideToggle!");
@@ -46,25 +51,22 @@
                alert("User used After!");
             });
             $('#append > button').click(function(){
-               $('#append').append("<p>Morem Ipsum!</p>");
+               alert("User used Append!");
             });
             $('#html > button').click(function(){
-               $('#html > p').html("<h4>The p is now an h4!</h4>");
+               alert("User used HTML!");
             });
             $('#attr > button').click(function(){
-               var imgsrc = $('#attr > img').attr('src');
-               alert("This gif can be found at: " + imgsrc);
+               alert("User used Attr!");
             });
             $('#val > button').click(function(){
-               var pickvalue = $('#val > select').val();
-               $('#val > p').text("Current value is: " + pickvalue);
+               alert("User used Val!");
             });
             $('#text > button').click(function(){
-               $('#text > p').text("Lorem Ipsum? More like Borem Ipsum.");
+               alert("User used Text!");
             });
             $('#data > button').click(function(){
-               $('#data > p').data("test", {stuff:"hidden datum!"});
-               alert('Value of the hidden data is: ' + $('#data > p').data("test").stuff);
+               alert("User used Data!");
             });
    		});
    </script>
@@ -78,33 +80,36 @@
       <div id="click">
          <h2>Click</h2>
          <p>LOREMIPSUM</p>
-         <button>Click</button>
+         <button id="clickbutton">Click</button>
       </div>
 		<div id="hide">
          <h2>Hide</h2>
-         <p>LOREMIPSUM</p>
+         <p id="hidden">LOREMIPSUM</p>
          <button>Hide</button>
       </div>
       <div id="show">
          <h2>Show</h2>
-         <p>LOREMIPSUM</p>
+         <p id="paragraph" style="display:none">LOREMIPSUM</p>
          <button>Show</button>
       </div>
       <div id="toggle">
          <h2>Toggle</h2>
-         <p>LOREMIPSUM</p>
+         <p id="togpara">LOREMIPSUM</p>
          <button>Toggle</button>
       </div>
       <div id="slidedown">
          <h2>SlideDown</h2>
-         <p>LOREMIPSUM</p>
          <button>SlideDown</button>
       </div>
+         <img id="slidedownpic" src="jquery_picture.jpeg" height="200px">
+
       <div id="slideup">
          <h2>SlideUp</h2>
          <p>LOREMIPSUM</p>
          <button>SlideUp</button>
       </div>
+      <img id="slideuppic" src="jquery_picture.jpeg">
+
       <div id="slidetoggle">
          <h2>SlideToggle</h2>
          <p>LOREMIPSUM</p>
@@ -138,39 +143,39 @@
       <div id="append">
          <h2>Append</h2>
          <p>LOREMIPSUM</p>
-         <button>Click to Append!</button>
+         <button>Append</button>
       </div>
       <div id="html">
          <h2>HTML</h2>
          <p>LOREMIPSUM</p>
-         <button>Click to alter HTML!</button>
+         <button>HTML</button>
       </div>
       <div id="attr">
          <h2>Attr</h2>
-         <img src="http://i.imgur.com/K3hOozA.gif">
-         <button>Tell me the source attribute!</button>
+         <p>LOREMIPSUM</p>
+         <button>Attr</button>
       </div>
       <div id="val">
          <h2>Val</h2>
-         <select>
-            <option value='Tool'>Tool</option>
-            <option value='Mastodon'>Mastodon</option>
-            <option value='Gojira'>Gojira</option>
-         </select>
-         <p>Current value is: </p> 
-         <h3></h3>
-         <button>Click to update value!</button>
+         <p>LOREMIPSUM</p>
+         <button>Val</button>
       </div>
       <div id="text">
          <h2>Text</h2>
          <p>LOREMIPSUM</p>
-         <button>Click to alter text!</button>
+         <button>Text</button>
       </div>
       <div id="data">
          <h2>Data</h2>
          <p>LOREMIPSUM</p>
-         <button>Click to display hidden data!</button>
+         <button>Data</button>
       </div>
 	</section>
+</body>
+</html>
+
+    <footer>
+
+    </footer>
 </body>
 </html>
