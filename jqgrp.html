@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>jquerytest</title>
+   <link rel="stylesheet" type="text/css" href="jqgrp.css">
+   <meta charset="utf-8">
+   <meta name="jquerytest" content="messing with jquery">
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script type="text/javascript">
+   		$(document).ready(function(){
+   			//jquery goes here - to load after doc ready
+   			$('#click > button').click(function(){
+               alert("User used Click!");
+            });
+            $('#hide > button').click(function(){
+               alert("User used Hide!");
+            });$('#show > button').click(function(){
+               alert("User used Show!");
+            });
+            $('#toggle > button').click(function(){
+               alert("User used Toggle!");
+            });
+            $('#slidedown > button').click(function(){
+               alert("User used SlideDown!");
+            });
+            $('#slideup > button').click(function(){
+               alert("User used SlideUp!");
+            });
+            $('#slidetoggle > button').click(function(){
+               alert("User used SlideToggle!");
+            });
+            $('#fadein > button').click(function(){
+               alert("User used FadeIn!");
+            });
+            $('#fadeout > button').click(function(){
+               alert("User used FadeOut!");
+            });
+            $('#addclass > button').click(function(){
+               alert("User used AddClass!");
+            });
+            $('#before > button').click(function(){
+               alert("User used Before!");
+            });
+            $('#after > button').click(function(){
+               alert("User used After!");
+            });
+            $('#append > button').click(function(){
+               $('#append').append("<p>Morem Ipsum!</p>");
+            });
+            $('#html > button').click(function(){
+               $('#html > p').html("<h4>The p is now an h4!</h4>");
+            });
+            $('#attr > button').click(function(){
+               var imgsrc = $('#attr > img').attr('src');
+               alert("This gif can be found at: " + imgsrc);
+            });
+            $('#val > button').click(function(){
+               var pickvalue = $('#val > select').val();
+               $('#val > p').text("Current value is: " + pickvalue);
+            });
+            $('#text > button').click(function(){
+               $('#text > p').text("Lorem Ipsum? More like Borem Ipsum.");
+            });
+            $('#data > button').click(function(){
+               $('#data > p').data("test", {stuff:"hidden datum!"});
+               alert('Value of the hidden data is: ' + $('#data > p').data("test").stuff);
+            });
+   		});
+   </script>
+</head>
+
+<body>
+   <header>
+      <h1>LET'S TEST SOME JQUERY!</h1>
+   </header>
+	<section>
+      <div id="click">
+         <h2>Click</h2>
+         <p>LOREMIPSUM</p>
+         <button>Click</button>
+      </div>
+		<div id="hide">
+         <h2>Hide</h2>
+         <p>LOREMIPSUM</p>
+         <button>Hide</button>
+      </div>
+      <div id="show">
+         <h2>Show</h2>
+         <p>LOREMIPSUM</p>
+         <button>Show</button>
+      </div>
+      <div id="toggle">
+         <h2>Toggle</h2>
+         <p>LOREMIPSUM</p>
+         <button>Toggle</button>
+      </div>
+      <div id="slidedown">
+         <h2>SlideDown</h2>
+         <p>LOREMIPSUM</p>
+         <button>SlideDown</button>
+      </div>
+      <div id="slideup">
+         <h2>SlideUp</h2>
+         <p>LOREMIPSUM</p>
+         <button>SlideUp</button>
+      </div>
+      <div id="slidetoggle">
+         <h2>SlideToggle</h2>
+         <p>LOREMIPSUM</p>
+         <button>SlideToggle</button>
+      </div>
+      <div id="fadein">
+         <h2>FadeIn</h2>
+         <p>LOREMIPSUM</p>
+         <button>FadeIn</button>
+      </div>
+      <div id="fadeout">
+         <h2>FadeOut</h2>
+         <p>LOREMIPSUM</p>
+         <button>FadeOut</button>
+      </div>
+      <div id="addclass">
+         <h2>AddClass</h2>
+         <p>LOREMIPSUM</p>
+         <button>AddClass</button>
+      </div>
+      <div id="before">
+         <h2>Before</h2>
+         <p>LOREMIPSUM</p>
+         <button>Before</button>
+      </div>
+      <div id="after">
+         <h2>After</h2>
+         <p>LOREMIPSUM</p>
+         <button>After</button>
+      </div>
+      <div id="append">
+         <h2>Append</h2>
+         <p>LOREMIPSUM</p>
+         <button>Click to Append!</button>
+      </div>
+      <div id="html">
+         <h2>HTML</h2>
+         <p>LOREMIPSUM</p>
+         <button>Click to alter HTML!</button>
+      </div>
+      <div id="attr">
+         <h2>Attr</h2>
+         <img src="http://i.imgur.com/K3hOozA.gif">
+         <button>Tell me the source attribute!</button>
+      </div>
+      <div id="val">
+         <h2>Val</h2>
+         <select>
+            <option value='Tool'>Tool</option>
+            <option value='Mastodon'>Mastodon</option>
+            <option value='Gojira'>Gojira</option>
+         </select>
+         <p>Current value is: </p> 
+         <h3></h3>
+         <button>Click to update value!</button>
+      </div>
+      <div id="text">
+         <h2>Text</h2>
+         <p>LOREMIPSUM</p>
+         <button>Click to alter text!</button>
+      </div>
+      <div id="data">
+         <h2>Data</h2>
+         <p>LOREMIPSUM</p>
+         <button>Data</button>
+      </div>
+	</section>
+</body>
+</html>
